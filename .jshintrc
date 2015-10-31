@@ -1,0 +1,9 @@
+/*jslint node: true */
+"use strict";
+{
+  "globals": {
+     "$": false
+  }
+}
+
+"predef" : ["define"]

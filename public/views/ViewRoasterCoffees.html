@@ -1,7 +1,11 @@
 <div ng-controller="ViewRoasterCoffees as vm">
 
+  <div class="headSpace">
+  <h1 style="color:white;">Below are all the coffees found for:</h1>
+  </div>
 
-<h1>Test ViewRoasterCoffees</h1>
-
+  <div ng-repeat="c in vm.coffees">
+    <h1>{{c.name}}</h1>
+  </div>
 
 </div>

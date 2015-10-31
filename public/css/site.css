@@ -20,8 +20,11 @@
 
   .navHead{
     background-image: url("https://images.unsplash.com/photo-1414542158951-f32d326a4820?fit=crop&fm=jpg&h=700&ixlib=rb-0.3.5&q=80&w=1350");
-    position: relative;
-    /*background-repeat: repeat;*/
+    background-repeat: repeat-y;
+    /*height: 100%
+    width: 100%;
+    position: absolute;*/
+
   }
 
   .regLog md-input-container label{
@@ -45,8 +48,8 @@
   /*margin: 10px 10px 10px 10px;*/
   line-height: 5.6rem !important;
   min-width: 0 !important;
-  width: 88px !important;
-  height: 88px !important;
+  width: 85px !important;
+  height: 85px !important;
   border-radius: 50% !important;
   /*word-wrap: break-word !important;*/
   /*white-space: pre-wrap;*/
@@ -86,9 +89,9 @@
 }
 */
 
-.fab2{
+/*.fab2{
   width: 100%;
-}
+}*/
 
 .headSpace{
   height: 100px;
@@ -100,6 +103,7 @@
   padding-left: 130px;
   font-weight: bold !important;
   font-size: 250%;
+  margin-top: 0px;
 }
 
 md-select-menu md-content{
@@ -125,17 +129,17 @@ md-sidenav{
   opacity: 0.75 ;
 }
 
-#fh{
+.fh{
   margin: 0;
   font-weight: 700;
   width: 100%;
   text-align: center;
 }
 
-.roasterTiles{
+/*.roasterTiles{
   background-color: rgba(0, 0, 0, 0.48);
   color: white;
-}
+}*/
 
 md-grid-tile-footer figcaption{
   width: 100%;
@@ -151,6 +155,8 @@ md-grid-tile {
   border: 1px solid #ddd;
   flex-grow: 1;
   width: 33.3333%;
+  opacity: 0.8;
+  padding-bottom: 10px;
 }
 
 .gridButton :hover{
@@ -160,9 +166,9 @@ md-grid-tile {
 }
 
 #foot {
-  background: rgba(0, 0, 0, 0.68);
+  background: rgba(0, 0, 0, 0.8);
   /*background: rgb(224, 224, 235);*/
-  height: 36px;
+  height: 30px;
   border-radius: 0px 0px 25px 25px;
 }
 
@@ -170,5 +176,15 @@ md-grid-tile {
   cursor: pointer;
   box-shadow: none;
   border-radius: none;
+}
 
+.fab2{
+  position: fixed;
+  bottom: 0;
+  z-index: 998;
+}
+
+.fab1{
+  position:fixed;
+  z-index: 998;
 }

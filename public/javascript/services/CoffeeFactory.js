@@ -24,6 +24,16 @@
       return q.promise;
     };
 
+		o.getAllCoffees = function(id) {
+      var q = $q.defer();
+      $http.get('/api/coffee/' + id).then(function(res) {
+        q.resolve(res.data);
+      });
+      return q.promise;
+    };
+
+		
+
 		return o;
 	}
 })();

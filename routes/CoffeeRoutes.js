@@ -28,6 +28,15 @@ var auth = jwt({
      });
    });
 
+   router.get('/:id', function(req, res, next){
+  Coffee.find({community: req.params.id}, function(err, result){
+    if(err) {return next(err);}
+    if(!result) {return next({err: "Error finding recipe by roaster ID."});}
+    res.send(result);
+  });
+});
+
+
 
 
 module.exports = router;

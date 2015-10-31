@@ -50,19 +50,19 @@
 
 		vm.goToAddCoffee = function(){
 			$state.go("AddCoffee");
-		}
+		};
 
 		vm.goToAddRoaster = function(){
 			$state.go("AddRoaster");
-		}
+		};
 
 		vm.viewRoaster = function(){
 			$state.go("ViewRoaster");
-		}
+		};
 
 		vm.viewSplash = function(){
 			$state.go("Home");
-		}
+		};
 
 
 

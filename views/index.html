@@ -7,11 +7,12 @@
 	<link rel="stylesheet" type="text/css" href="/css/site.css">
 	<link rel="stylesheet" href="/angular-material/angular-material.css" >
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="/flexslider/flexslider.css"> -->
 
 </head>
-<body ng-controller="GlobalController as nav" class="navHead">
+<body ng-controller="GlobalController as nav" >
 
-<div class="abDiv" style="height: 100%">
+<div class="abDiv navHead" style="height: 100%">
 
 	<!-- Fab Button -->
 	<div class="lock-size fab fab1" layout="row" layout-align="left">
@@ -31,6 +32,7 @@
       </md-fab-speed-dial>
     </div>
 
+<!-- reglog FAB -->
 		<div class="fab fab2" layout="row" layout-align="left">
 				<md-fab-speed-dial md-open="nav.isOpenBottom" md-direction="{{nav.selectedDirectionBottom}}" ng-class="nav.selectedModeBottom">
 					<md-fab-trigger>
@@ -109,8 +111,9 @@
 
 </div>
 
-
-
+	<!-- flexslider -->
+	<!-- <script src="/jquery/src/jquery.js"></script> -->
+	<!-- <script src="/flexslider/jquery.flexslider.js"></script> -->
 	<!-- Ext Libs -->
 	<script src="angular/angular.min.js"></script>
 	<script src="angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -118,6 +121,8 @@
 	<script src="/angular-material/angular-material.min.js"></script>
 	<script src="/angular-aria/angular-aria.min.js"></script>
 	<script src="/angular-animate/angular-animate.min.js"></script>
+	<!-- more flex -->
+	<!-- <script src="/angular-flexslider/angular-flexslider.js"></script> -->
 	<!-- Global Src -->
 	<script src="/javascript/app.js"></script>
 	<!-- Factories -->

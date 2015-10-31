@@ -1,4 +1,4 @@
-<div ng-controller="ViewRoaster as vm" class="top">
+<div ng-controller="ViewRoaster as vm" class="top navHead">
 
   <div class="headSpace">
   <h1 style="color:white;">Please browse our library of Coffee Roasters:</h1>
@@ -9,17 +9,20 @@
   </div> -->
 
   <md-grid-list md-cols-gt-sm="4" md-cols-sm="4" md-row-height-gt-md="3:2.4" md-row-height="5:3"
-      md-row-height="150px" style="margin-left: 100px;" md-gutter-gt-md="26px" md-gutter-gt-sm="8px" md-gutter="14px" >
+      md-row-height="150px" style="margin: 20px;" md-gutter-gt-md="26px" md-gutter-gt-sm="8px" md-gutter="4px" >
   <!-- <md-grid-tile md-rowspan="2" class="gridButton" class="plus" md-colspan="2" ui-sref="AddCommunity" style="background-color: #448aff; color: white; text-align: center;">
     <img src="http://4vector.com/i/free-vector-simple-graphic-decorative-icon-vector-1-single-download-available_019158_png1/Add%20512x512.png" alt="plus sign" height="300px" />
     <h3 id="addCom">Add Community</h3>
   </md-grid-tile> -->
 
-<md-grid-tile ng-repeat="r in vm.roasters" class="roasterTiles gridButton"  > <!-- ng-click="vm.goToCom(r._id)" -->
- <img src="{{r.logo}}" alt="logo" width="200px" />
-<md-grid-tile-footer id="foot"><h3 id="fh">{{r.name}}</h3></md-grid-tile-footer>
+<md-grid-tile ng-click="vm.goToRoaster(r._id)" ng-repeat="r in vm.roasters" class="roasterTiles gridButton" style="background-image: url({{r.logo}}); background-size: 300px 238px;" >
+<md-grid-tile-footer id="foot">
+  <div>
+    <h3 class="fh">{{r.name}}</h3>
+  </div>
+</md-grid-tile-footer>
 </md-grid-tile>
-
 </md-grid-list>
+
 
 </div>

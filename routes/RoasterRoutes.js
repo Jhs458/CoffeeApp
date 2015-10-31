@@ -33,5 +33,13 @@ var auth = jwt({
      });
    });
 
+   router.get('/:id', function(req, res, next) {
+  Roaster.findOne({_id: req.params.id}, function(err, result) {
+    res.send(result);
+  });
+});
+
+
+
 
 module.exports = router;
