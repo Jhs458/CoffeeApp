@@ -5,8 +5,8 @@
 
 	function Config($stateProvider, $urlRouterProvider, $httpProvider) {
 		$stateProvider
-		.state('Home',{
-			url: '/',
+		.state('ViewRoaster',{
+			url: '/viewroaster',
 			templateUrl: 'views/ViewRoaster.html'
 		})
 		.state('AddRoaster',{
@@ -36,6 +36,10 @@
 		.state('Profile',{
 			url: '/profile',
 			templateUrl: 'views/Profile.html'
+		})
+		.state('Home',{
+			url: '/',
+			templateUrl: 'views/Splash.html'
 		});
 		$urlRouterProvider.otherwise('/');
 		$httpProvider.interceptors.push('AuthInterceptor');

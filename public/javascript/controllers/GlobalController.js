@@ -57,6 +57,10 @@
 		}
 
 		vm.viewRoaster = function(){
+			$state.go("ViewRoaster");
+		}
+
+		vm.viewSplash = function(){
 			$state.go("Home");
 		}
 
