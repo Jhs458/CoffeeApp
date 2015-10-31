@@ -1,7 +1,48 @@
-<div ng-controller="AddCoffee as vm">
+<div ng-controller="AddCoffee as vm" class="top">
 
-<h1>Test AddCoffee</h1>
+  <div class="headSpace">
+  <h1 style="color:white;">Please add a coffee below:</h1>
+  </div>
+
+  <form ng-submit="vm.addCoffee()">
+
+    <div layout="row">
+      <div flex="50">
+        <md-input-container layout-padding class="inputBack">
+          <label class="inputs">Coffee Name...</label>
+          <input ng-model="vm.coffee.name" class="inputs" />
+        </md-input-container>
+        <br>
+        <br>
+        <md-input-container layout-padding class="inputBack">
+          <label class="inputs">Country of Origin...</label>
+          <input ng-model="vm.coffee.origin" class="inputs" />
+        </md-input-container>
+      </div>
+     <div flex="50" >
+       <md-input-container layout-padding class="inputBack">
+         <label class="inputs">Roast Profile...</label>
+         <input required ng-model="vm.coffee.roastProfile" class="inputs"/>
+       </md-input-container>
+       <br>
+       <br>
+
+       <md-input-container layout-padding class="inputBack">
+     <label class="inputs"><span class="selectSpan">Roasters:</span></label>
+     <md-select ng-model="vm.coffee.roaster" class="inputs">
+       <md-option class="inputBack" required ng-repeat="ro in vm.roasters" ng-value="ro._id">{{ro.name}}</md-option>
+     </md-select>
+   </md-input-container>
+
+     </div>
+   </div>
 
 
+       <div layout="row">
+         <md-button type="submit" class="md-raised">Add Coffee</md-button>
+         <md-button type="button" class="md-raised" ui-sref="Home">Cancel</md-button>
+       </div>
+
+   </form>
 
 </div>

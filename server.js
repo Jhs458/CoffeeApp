@@ -24,13 +24,14 @@ app.set('view options', {
 	layout: false
 });
 
+passport.initialize();
 //middleware that allows for us to parse JSON and UTF-8 from the body of an HTTP request
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 // Route Links
-var roasterRoutes = require('./routes/CoffeeRoutes');
-var coffeeRoutes = require('./routes/RoasterRoutes');
+var roasterRoutes = require('./routes/RoasterRoutes');
+var coffeeRoutes = require('./routes/CoffeeRoutes');
 var userRoutes = require('./routes/UserRoutes');
 
 //on homepage load, render the index page

@@ -3,11 +3,11 @@
 	angular.module('app', ['ui.router', 'ngMaterial'])
 	.config(Config);
 
-	function Config($stateProvider, $urlRouterProvider) {
+	function Config($stateProvider, $urlRouterProvider, $httpProvider) {
 		$stateProvider
-		.state('Roaster',{
+		.state('Home',{
 			url: '/',
-			templateUrl: 'views/Roaster.html'
+			templateUrl: 'views/ViewRoaster.html'
 		})
 		.state('AddRoaster',{
 			url: '/addroaster',
@@ -38,5 +38,6 @@
 			templateUrl: 'views/Profile.html'
 		});
 		$urlRouterProvider.otherwise('/');
+		$httpProvider.interceptors.push('AuthInterceptor');
 	}
 })();

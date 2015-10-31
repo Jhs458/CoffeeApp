@@ -3,9 +3,17 @@
 	angular.module('app')
 	.controller('AddRoaster', AddRoaster);
 
-	function AddRoaster(RoasterFactory) {
+	function AddRoaster(RoasterFactory, $state) {
 		var vm = this;
+		vm.roaster = {};
 
+		vm.addRoaster = function(){
+				// console.log("controller")
+		      RoasterFactory.addRoaster(vm.roaster).then(function(res) {
+						// console.log(res);
+		                $state.go('Home');
+		            });
+		          };
 
 
 

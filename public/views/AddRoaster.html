@@ -1,7 +1,54 @@
-<div ng-controller="AddRoaster as vm">
+<div ng-controller="AddRoaster as vm" class="top">
+
+<div class="headSpace">
+<h1 style="color:white;">Please add a roaster below:</h1>
+</div>
+
+<form ng-submit="vm.addRoaster()">
+
+  <div layout="row">
+
+    <div flex="50">
+      <md-input-container layout-padding class="inputBack">
+        <label class="inputs">Logo Image URL...</label>
+        <input ng-model="vm.roaster.logo" class="inputs" />
+      </md-input-container>
+      <br>
+      <br>
+      <md-input-container layout-padding class="inputBack">
+        <label class="inputs">Location...</label>
+        <input required ng-model="vm.roaster.location" class="inputs"/>
+      </md-input-container>
 
 
-<h1>Test AddRoaster</h1>
+    </div>
 
+   <div flex="50" >
+     <md-input-container layout-padding class="inputBack">
+       <label class="inputs">Roaster Name...</label>
+       <input required ng-model="vm.roaster.name" class="inputs"/>
+     </md-input-container>
+     <br>
+     <br>
+     <md-input-container layout-padding class="inputBack">
+   <label class="inputs"><span class="selectSpan">Rating:</span></label>
+   <md-select ng-model="vm.roaster.rating" class="inputs">
+     <md-option class="inputBack" required ng-value="1"><span flex><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i></span></md-option>
+     <md-option class="inputBack" required ng-value="2"><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i></md-option>
+     <md-option class="inputBack" required ng-value="3"><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i></md-option>
+     <md-option class="inputBack" required ng-value="4"><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i></md-option>
+     <md-option class="inputBack" required ng-value="5"><i class="zmdi zmdi-star-outline"></i></md-option>
+   </md-select>
+ </md-input-container>
+   </div>
+ </div>
+
+
+     <div layout="row">
+       <md-button type="submit" class="md-raised">Add Roaster</md-button>
+       <md-button type="button" class="md-raised" ui-sref="Home">Cancel</md-button>
+     </div>
+
+ </form>
 
 </div>

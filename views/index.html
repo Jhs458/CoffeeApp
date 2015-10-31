@@ -11,25 +11,39 @@
 </head>
 <body ng-controller="GlobalController as nav" class="navHead">
 
-
+<div class="abDiv" style="height: 100%">
 
 	<!-- Fab Button -->
-	<div class="lock-size fab" layout="row" layout-align="left">
+	<div class="lock-size fab fab1" layout="row" layout-align="left">
       <md-fab-speed-dial md-open="nav.isOpen" md-direction="{{nav.selectedDirection}}" ng-class="nav.selectedMode">
-        <md-fab-trigger>
-          <md-button aria-label="menu" class="md-fab md-warn">
-            <i class="zmdi zmdi-view-list zmdi-hc-lg"></i>
+        <md-fab-trigger class="triggerSize">
+          <md-button aria-label="menu" class="md-fab md-warn buttonSize">
+            <i class="zmdi zmdi-coffee zmdi-hc-4x" style="padding-top:17px"></i>
           </md-button>
         </md-fab-trigger>
         <md-fab-actions>
-          <md-button aria-label="label" style="background-color:#FF9933; color: grey" class="md-fab md-raised md-mini">1</md-button>
-          <md-button aria-label="label" style="background-color:#ffff8d; color: grey" class="md-fab md-raised md-mini">2</md-button>
-          <md-button aria-label="label" style="background-color:#b9f6ca; color: grey" class="md-fab md-raised md-mini">3</md-button>
-					<md-button ng-click="nav.toggleRight()" style="background-color:#80d8ff; color: white" class="md-fab md-raised md-mini">L/R</md-button>
-					<md-button aria-label="label" style="background-color:#8c9eff; color: white" class="md-fab md-raised md-mini">3</md-button>
+          <md-button ng-click="nav.toggleRight()" aria-label="label" style="background-color:#FF9933;" class="lightB md-fab md-raised md-mini">L/R</md-button>
+          <md-button ng-click="nav.viewRoaster()" aria-label="label" style="background-color:#ffff8d;" class="lightB md-fab md-raised md-mini"><span class="custom">View Roaster</span></md-button>
+          <md-button aria-label="label" style="background-color:#b9f6ca;" class="lightB md-fab md-raised md-mini">View Coffee</md-button>
+					<md-button style="background-color:#80d8ff;" class="darkB md-fab md-raised md-mini">1</md-button>
+					<md-button aria-label="label" style="background-color:#8c9eff;" class="darkB md-fab md-raised md-mini">2</md-button>
 				</md-fab-actions>
       </md-fab-speed-dial>
     </div>
+
+		<div class="fab fab2" layout="row" layout-align="left">
+				<md-fab-speed-dial md-open="nav.isOpenBottom" md-direction="{{nav.selectedDirectionBottom}}" ng-class="nav.selectedModeBottom">
+					<md-fab-trigger>
+						<md-button class="md-fab md-warn nameButton" ng-show='nav.status.username;'> {{nav.status.username}} </md-button>
+					</md-fab-trigger>
+					<md-fab-actions>
+						<md-button ng-click="nav.goToAddRoaster()" aria-label="label" style="background-color:#FF9933;" class="lightB md-fab md-raised md-mini">Add Roaster</md-button>
+						<md-button ng-click="nav.goToAddCoffee()" aria-label="label" style="background-color:#ffff8d;" class="lightB md-fab md-raised md-mini">Add Coffee</md-button>
+						<md-button ng-click="nav.goToProfile()" aria-label="label" style="background-color:#b9f6ca;" class="lightB md-fab md-raised md-mini">Profile</md-button>
+						<md-button aria-label="label" style="background-color:#8c9eff;" class="darkB md-fab md-raised md-mini" ng-click='nav.logout()'>Logout</md-button>
+					</md-fab-actions>
+				</md-fab-speed-dial>
+			</div>
 
 
 <!-- UI VIEW -->
@@ -93,6 +107,10 @@
 
 
 
+</div>
+
+
+
 	<!-- Ext Libs -->
 	<script src="angular/angular.min.js"></script>
 	<script src="angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -104,9 +122,11 @@
 	<script src="/javascript/app.js"></script>
 	<!-- Factories -->
 	<script src="/javascript/services/UserFactory.js"></script>
-	<script src="/javascript/services/ReviewFactory.js"></script>
+	<!-- <script src="/javascript/services/ReviewFactory.js"></script> -->
 	<script src="/javascript/services/RoasterFactory.js"></script>
 	<script src="/javascript/services/CoffeeFactory.js"></script>
+	<script src="/javascript/services/AuthInterceptor.js"></script>
+
 	<!-- Controllers -->
 	<script src="/javascript/controllers/AddCoffee.js"></script>
 	<script src="/javascript/controllers/AddRoaster.js"></script>
