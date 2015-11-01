@@ -16,11 +16,18 @@
       return q.promise;
     };
 
-		o.goToRoaster = function(rid){
-			// rid.name = rid.name.split(" ").join("");
-			// console.log(rid._id);
+		// o.goToRoaster = function(rid){
+		// 	// rid.name = rid.name.split(" ").join("");
+		// 	var q = $q.defer();
+		// 	$http.get('/api/roaster/' + rid._id).then(function(res) {
+		// 		q.resolve(res.data);
+		// 	});
+		// 	return q.promise;
+		// };
+
+		o.getSingleRoaster = function(id){
 			var q = $q.defer();
-			$http.get('/api/roaster/' + rid).then(function(res) {
+			$http.get('/api/roaster/name/' + id).then(function(res) {
 				q.resolve(res.data);
 			});
 			return q.promise;

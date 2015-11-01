@@ -8,15 +8,13 @@
 
 		CoffeeFactory.getAllRoasters().then(function(res) {
 					vm.roasters = res;
-					// console.log(vm.roasters);
 				});
 
 		vm.goToRoaster = function(rid){
 			// rid.name = rid.name.split(" ").join("");
-			console.log(rid);
-			RoasterFactory.goToRoaster(rid).then(function(res){
-			$state.go("ViewRoasterCoffees", {id:rid});
-		});
+			// RoasterFactory.goToRoaster(rid).then(function(res){
+			$state.go("ViewRoasterCoffees", {id:rid._id});
+		// });
 		};
 
 

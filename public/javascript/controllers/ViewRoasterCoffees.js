@@ -3,7 +3,7 @@
 	angular.module('app')
 	.controller('ViewRoasterCoffees', ViewRoasterCoffees);
 
-	function ViewRoasterCoffees(CoffeeFactory, UserFactory, RoasterFactory, $stateParams) {
+	function ViewRoasterCoffees(CoffeeFactory, UserFactory, RoasterFactory, $stateParams, $state) {
 		var vm = this;
 		vm.status = UserFactory.status;
 
@@ -12,6 +12,16 @@
 			vm.coffees = res;
 		});
 		}
+
+		if($stateParams.id){
+			RoasterFactory.getSingleRoaster($stateParams.id).then(function(res) {
+					vm.roaster = res;
+				});
+			}
+
+			vm.editCoffee = function(c){
+				$state.go("EditCoffee", {id:c._id});
+			};
 
 
 

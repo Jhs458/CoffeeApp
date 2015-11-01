@@ -14,11 +14,11 @@
 			templateUrl: 'views/AddRoaster.html'
 		})
 		.state('EditRoaster',{
-			url: '/editroaster',
+			url: '/editroaster/:id',
 			templateUrl: 'views/EditRoaster.html'
 		})
 		.state('ViewRoasterCoffees',{
-			url: '/viewroastercoffees',
+			url: '/viewroastercoffees/:id',
 			templateUrl: 'views/ViewRoasterCoffees.html'
 		})
 		.state('ViewCoffee',{
@@ -30,7 +30,7 @@
 			templateUrl: 'views/AddCoffee.html'
 		})
 		.state('EditCoffee',{
-			url: '/editcoffee',
+			url: '/editcoffee/:id',
 			templateUrl: 'views/EditCoffee.html'
 		})
 		.state('Profile',{

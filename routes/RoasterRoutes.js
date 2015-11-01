@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 var Roaster = mongoose.model('Roaster');
+var Coffee = mongoose.model('Coffee');
 var jwt = require('express-jwt');
 var auth = jwt({
   userProperty: "payload", //req.payload._id in the Route
@@ -9,14 +10,14 @@ var auth = jwt({
    });
 
    router.param('id', function(req, res, next, id) {
-  Roaster.findOne({_id: id})
-  //.populate('recipes', 'body postedBy')
-  .exec(function(err, result) {
-    if(!result) {res.status(404).send({err: "Could not find that specific community."});}
-    req.roaster = result;
-    next();
-  });
-});
+     Roaster.findOne({_id: id})
+     //.populate('recipes', 'body postedBy')
+     .exec(function(err, result) {
+       if(!result) {res.status(404).send({err: "Could not find that specific community."});}
+       req.roaster = result;
+       next();
+      });
+    });
 
    router.post('/', auth, function(req, res, next) {
      var roaster = new Roaster(req.body);
@@ -33,11 +34,19 @@ var auth = jwt({
      });
    });
 
-   router.get('/:id', function(req, res, next) {
-  Roaster.findOne({_id: req.params.id}, function(err, result) {
+   router.get('/name/:id', function(req, res, next) {
+     Roaster.findOne({_id: req.params.id}, function(err, result) {
+    res.send(result);
+      });
+    });
+
+router.get('/:id', function(req, res, next){
+  Coffee.find({roaster: req.params.id}, function(err, result){
+    if(err) {return next(err);}
+    if(!result) {return next({err: "Error finding roaster by ID."});}
     res.send(result);
   });
-});
+  });
 
 
 

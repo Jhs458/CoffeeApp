@@ -15,7 +15,7 @@
     <h3 id="addCom">Add Community</h3>
   </md-grid-tile> -->
 
-<md-grid-tile ng-click="vm.goToRoaster(r._id)" ng-repeat="r in vm.roasters" class="roasterTiles gridButton" style="background-image: url({{r.logo}}); background-size: 300px 238px;" >
+<md-grid-tile ng-click="vm.goToRoaster(r)" ng-repeat="r in vm.roasters" class="roasterTiles gridButton" style="background-image: url({{r.logo}}); background-size: 300px 238px;" >
 <md-grid-tile-footer id="foot">
   <div>
     <h3 class="fh">{{r.name}}</h3>

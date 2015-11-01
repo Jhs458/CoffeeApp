@@ -1,11 +1,26 @@
 <div ng-controller="ViewRoasterCoffees as vm">
 
-  <div class="headSpace">
-  <h1 style="color:white;">Below are all the coffees found for:</h1>
-  </div>
+  <div class="headSpace"><h1 style="color:white;">Below are all the coffees found for: {{vm.roaster.name}}</h1></div>
 
-  <div ng-repeat="c in vm.coffees">
-    <h1>{{c.name}}</h1>
-  </div>
+  <md-grid-list md-cols-gt-sm="4" md-cols-sm="4" md-row-height-gt-md="3:2.4" md-row-height="5:3"
+  md-row-height="150px" style="margin: 20px;" md-gutter-gt-md="26px" md-gutter-gt-sm="8px" md-gutter="4px" >
+
+  <md-grid-tile layout="column" ng-repeat="c in vm.coffees" class="coffeeTiles" >
+      <div><h4 class="coffeeAttHead">Coffee Name:</h4></div>
+      <div><p class="coffeeAtt">Country of Origin</p></div>
+      <div><p class="coffeeAtt">Roast Profile</p></div>
+    <md-grid-tile-footer id="foot">
+      <div><h3 flex class="fh">Know Your Coffee!</h3></div>
+  </md-grid-tile-footer></md-grid-tile>
+
+<md-grid-tile layout="column" ng-repeat="c in vm.coffees" class="coffeeTiles" >
+    <div><h4 class="coffeeAttHead">{{c.name}}</h4></div>
+    <div><p class="coffeeAtt">{{c.origin}}</p></div>
+    <div><p class="coffeeAtt">{{c.roastProfile}}</p></div>
+  <md-grid-tile-footer id="foot">
+    <div layout="row"><md-button ng-click="vm.editCoffee(c)" flex class="fh">Edit</md-button>
+      <md-button flex class="fh">Rating</md-button></div>
+  </md-grid-tile-footer></md-grid-tile>
+</md-grid-list>
 
 </div>

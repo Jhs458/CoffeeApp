@@ -65,7 +65,7 @@
 }
 
 .custom{
-  word-wrap: break-word;
+  word-wrap: break-word !important;
 }
 
 .top h1{
@@ -83,15 +83,6 @@
   color : white !important;
   border-color: white !important;
 }
-
-/*.fab1{
-  height: 100%;
-}
-*/
-
-/*.fab2{
-  width: 100%;
-}*/
 
 .headSpace{
   height: 100px;
@@ -187,4 +178,26 @@ md-grid-tile {
 .fab1{
   position:fixed;
   z-index: 998;
+}
+
+.coffeeAtt{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 50%;
+}
+
+.coffeeAttHead{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 70%;
+  padding: 20px;
+}
+
+
+.coffeeTiles figure{
+  display: inline !important;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 25px 25px 25px 25px;
+  text-align: center;
+  color: white;
 }

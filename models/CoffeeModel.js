@@ -6,7 +6,7 @@ var CoffeeSchema = new mongoose.Schema({
  roastProfile: {required: true, type: String},
  created: Date,
  createdBy: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
- roaster: [{type: mongoose.Schema.Types.ObjectId, ref:'Roaster'}],
+ roaster: {type: mongoose.Schema.Types.ObjectId, ref:'Roaster'},
  reviews: [{ review: {required: true, type: String}, reviewedBy: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User'}]}]
  //community = req.params.CommunityId
 });
