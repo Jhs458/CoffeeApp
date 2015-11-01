@@ -38,7 +38,22 @@
 			return q.promise;
 		};
 
+		o.updateCoffee = function(z, id) {
+					var q = $q.defer();
+					$http.put('/api/coffee/' + id.id, z).then(function (res) {
+						q.resolve(res.data);
+					});
+					return q.promise;
+				};
 
+				o.deleteCoffee = function(id) {
+					console.log(id);
+		      var q = $q.defer();
+		      $http.delete('/api/coffee/' + id.id).then(function(res) {
+		        q.resolve();
+		      });
+		      return q.promise;
+		    };
 
 		return o;
 	}

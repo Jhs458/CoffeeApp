@@ -20,13 +20,29 @@ var auth = jwt({
    });
 
 
-router.get('/edit/:id', function(req, res, next){
-  Coffee.findOne({_id: req.params.id}, function(err, result){
-    if(err) {return next(err);}
-    if(!result) {return next({err: "Error finding coffee by ID."});}
-    res.send(result);
-  });
-});
+    router.get('/edit/:id', function(req, res, next){
+      Coffee.findOne({_id: req.params.id}, function(err, result){
+        if(err) {return next(err);}
+        if(!result) {return next({err: "Error finding coffee by ID."});}
+        res.send(result);
+      });
+    });
+
+
+    router.put('/:id', auth, function (req, res, next) {
+      Coffee.update({_id: req.params.id}, req.body, function (err, result) {
+        if(err) return next(err);
+        if(!result) return next({err: "The post wasn't found for updating"});
+        res.send(result);
+      });
+    });
+
+    router.delete('/:id', auth, function(req, res, next) {
+      Coffee.remove({_id: req.params.id}, function(err, result) {
+        if(err) return next(err);
+        res.send();
+          });
+        });
 
 
 

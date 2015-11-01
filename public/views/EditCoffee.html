@@ -4,32 +4,32 @@
   <h1 style="color:white;">Please edit {{vm.coffee.name}} below:</h1>
   </div>
 
-  <form ng-submit="vm.editCoffee()" style="margin-left:100px">
+  <form ng-submit="vm.updateCoffee(vm.editCoffee)" style="margin-left:100px">
 
     <div layout="row">
       <div flex="50">
         <md-input-container layout-padding class="inputBack">
           <label class="inputs">Coffee Name...</label>
-          <input ng-model="vm.coffee.name" class="inputs" />
+          <input ng-model="vm.editCoffee.name" placeholder="{{vm.coffee.name}}" class="inputs" />
         </md-input-container>
         <br>
         <br>
         <md-input-container layout-padding class="inputBack">
           <label class="inputs">Country of Origin...</label>
-          <input ng-model="vm.coffee.origin" class="inputs" />
+          <input ng-model="vm.editCoffee.origin" placeholder="{{vm.coffee.origin}}" class="inputs" />
         </md-input-container>
       </div>
      <div flex="50" >
        <md-input-container layout-padding class="inputBack">
          <label class="inputs">Roast Profile...</label>
-         <input required ng-model="vm.coffee.roastProfile" class="inputs"/>
+         <input required ng-model="vm.editCoffee.roastProfile" placeholder="{{vm.coffee.roastProfile}}" class="inputs"/>
        </md-input-container>
        <br>
        <br>
 
        <md-input-container layout-padding class="inputBack">
      <label class="inputs"><span class="selectSpan">Roasters:</span></label>
-     <md-select ng-model="vm.coffee.roaster" class="inputs">
+     <md-select ng-model="vm.editCoffee.roaster" class="inputs">
        <md-option class="inputBack" required ng-repeat="ro in vm.roasters" ng-value="ro._id">{{ro.name}}</md-option>
      </md-select>
    </md-input-container>
@@ -39,7 +39,8 @@
 
 
        <div layout="row">
-         <md-button type="submit" class="md-raised">Edit Coffee</md-button>
+         <md-button type="submit" class="md-raised" ng-show ='nav.status.username;'>Edit Coffee</md-button>
+         <md-button type="button" class="md-raised" ng-click="vm.deleteCoffee()" ng-show ='nav.status.username;'>Delete</md-button>
          <md-button type="button" class="md-raised" ui-sref="Home">Cancel</md-button>
        </div>
 
