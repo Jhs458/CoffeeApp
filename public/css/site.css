@@ -201,3 +201,46 @@ md-grid-tile {
   text-align: center;
   color: white;
 }
+
+.fab3{
+  right: 0;
+  top: 0;
+  float:right;
+  position: fixed;
+  z-index: 998;
+}
+
+.editIcon{
+  right: 0;
+  top: 0;
+  color: black;
+  position: absolute !important;
+  width: 50px !important;
+}
+
+/*.editIcon :hover{
+  cursor: pointer;
+  box-shadow: 2px 0px 2px 2px black;
+  border-radius: 25px 25px 25px 25px;
+}*/
+
+.optBar{
+  background: none;
+  padding-top: 0;
+  padding-bottom:0;
+  opacity: 1;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 15px 15px 15px 15px !important;
+}
+
+.optBar .md-button span{
+  background: none;
+  font-weight: bolder !important;
+  color: white;
+}
+
+.md-open-menu-container{
+  box-shadow: none !important;
+  border: none !important;
+}

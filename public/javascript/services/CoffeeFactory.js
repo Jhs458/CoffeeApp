@@ -48,12 +48,12 @@
 
 				o.deleteCoffee = function(id) {
 					console.log(id);
-		      var q = $q.defer();
-		      $http.delete('/api/coffee/' + id.id).then(function(res) {
-		        q.resolve();
-		      });
-		      return q.promise;
-		    };
+			      var q = $q.defer();
+			      $http.delete('/api/coffee/' + id.id).then(function(res) {
+			        q.resolve();
+			      });
+			      return q.promise;
+			    };
 
 		return o;
 	}

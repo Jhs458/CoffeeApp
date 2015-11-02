@@ -8,6 +8,7 @@
 
 		CoffeeFactory.getAllRoasters().then(function(res) {
 					vm.roasters = res;
+					// console.log(vm.roasters);
 				});
 
 		vm.goToRoaster = function(rid){
@@ -17,6 +18,21 @@
 		// });
 		};
 
+		vm.deleteRoaster = function(y){
+					var response = confirm("Are You Sure You'd Like To Delete?");
+					if(response){
+						RoasterFactory.deleteRoaster(y._id).then(function() {
+								vm.roasters.splice(vm.roasters.indexOf(y), 1);
+							});
+						}
+				else{
+					$state.go('ViewRoaster');
+						}
+					};
+
+			vm.editRoaster = function(er){
+				$state.go("EditRoaster", {id:er._id});
+			};
 
 
 	}

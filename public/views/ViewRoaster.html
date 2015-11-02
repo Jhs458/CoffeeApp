@@ -1,12 +1,6 @@
 <div ng-controller="ViewRoaster as vm" class="top navHead">
 
-  <div class="headSpace">
-  <h1 style="color:white;">Please browse our library of Coffee Roasters:</h1>
-  </div>
-
-  <!-- <div class="" ng-repeat="r in vm.roasters">
-    <h2 style="color:white;">{{r.name}}</h2>
-  </div> -->
+  <div class="headSpace"><h1 style="color:white;">Please browse our library of Coffee Roasters:</h1></div>
 
   <md-grid-list md-cols-gt-sm="4" md-cols-sm="4" md-row-height-gt-md="3:2.4" md-row-height="5:3"
       md-row-height="150px" style="margin: 20px;" md-gutter-gt-md="26px" md-gutter-gt-sm="8px" md-gutter="4px" >
@@ -16,13 +10,32 @@
   </md-grid-tile> -->
 
 <md-grid-tile ng-click="vm.goToRoaster(r)" ng-repeat="r in vm.roasters" class="roasterTiles gridButton" style="background-image: url({{r.logo}}); background-size: 300px 238px;" >
-<md-grid-tile-footer id="foot">
-  <div>
-    <h3 class="fh">{{r.name}}</h3>
-  </div>
-</md-grid-tile-footer>
-</md-grid-tile>
-</md-grid-list>
+
+        <md-menu md-offset="0 -7" class="editIcon" ng-show ='nav.status.username;'>
+            <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+              <i class="zmdi zmdi-menu editIcon zmdi-hc-3x"></i>
+            </md-button>
+            <md-menu-content width="2" class="optBar">
+              <md-menu-item style="background: rgba(0, 0, 0, 0.67); border-radius: 15px 15px 15px 15px;">
+                <md-button ng-click="vm.editRoaster(r)"> <span md-menu-align-target>Edit</span></md-button>
+                <md-button ng-click="vm.deleteRoaster(r)" > <span md-menu-align-target>Delete</span></md-button>
+                <md-button> <span md-menu-align-target>Rating</span></md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>
+
+  <md-grid-tile-footer id="foot"><div layout="row"><h3 flex class="fh">{{r.name}}</h3></div></md-grid-tile-footer>
+  </md-grid-tile>
+  </md-grid-list>
+
+  <!-- <div class="fab3" layout="row">
+      <md-fab-speed-dial>
+        <md-fab-trigger>
+          <md-button class="md-fab md-warn" ng-show='nav.status.username;'> Edit </md-button>
+        </md-fab-trigger>
+      </md-fab-speed-dial>
+    </div> -->
+
 
 
 </div>

@@ -33,8 +33,22 @@
 			return q.promise;
 		};
 
+		o.deleteRoaster = function(id){
+			// console.log(id);
+			var q = $q.defer();
+			$http.delete('/api/roaster/' + id).then(function(res) {
+				q.resolve();
+			});
+			return q.promise;
+		};
 
-
+		o.updateRoaster = function(n, id) {
+					var q = $q.defer();
+					$http.put('/api/roaster/' + id.id, n).then(function (res) {
+						q.resolve(res.data);
+					});
+					return q.promise;
+				};
 
 		return o;
 	}

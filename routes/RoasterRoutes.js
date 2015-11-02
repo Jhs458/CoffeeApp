@@ -48,6 +48,21 @@ router.get('/:id', function(req, res, next){
   });
   });
 
+  router.delete('/:id', auth, function(req, res, next) {
+    Roaster.remove({_id: req.params.id}, function(err, result) {
+      if(err) return next(err);
+      res.send();
+        });
+      });
+
+      router.put('/:id', auth, function (req, res, next) {
+        Roaster.update({_id: req.params.id}, req.body, function (err, result) {
+          if(err) return next(err);
+          if(!result) return next({err: "The post wasn't found for updating"});
+          res.send(result);
+        });
+      });
+
 
 
 

@@ -19,7 +19,6 @@ var auth = jwt({
      });
    });
 
-
     router.get('/edit/:id', function(req, res, next){
       Coffee.findOne({_id: req.params.id}, function(err, result){
         if(err) {return next(err);}
@@ -27,7 +26,6 @@ var auth = jwt({
         res.send(result);
       });
     });
-
 
     router.put('/:id', auth, function (req, res, next) {
       Coffee.update({_id: req.params.id}, req.body, function (err, result) {
