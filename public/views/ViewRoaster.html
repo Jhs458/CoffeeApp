@@ -11,7 +11,7 @@
 
 <md-grid-tile ng-click="vm.goToRoaster(r)" ng-repeat="r in vm.roasters" class="roasterTiles gridButton" style="background-image: url({{r.logo}}); background-size: 300px 238px;" >
 
-        <md-menu md-offset="0 -7" class="editIcon" ng-show ='nav.status.username;'>
+        <md-menu md-offset="0 -7" class="editIcon" ng-show ='nav.status._id == r.createdBy'>
             <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
               <i class="zmdi zmdi-menu editIcon zmdi-hc-3x"></i>
             </md-button>

@@ -244,3 +244,7 @@ md-grid-tile {
   box-shadow: none !important;
   border: none !important;
 }
+
+.selectSpanRating{
+  height: 20px !important;
+}

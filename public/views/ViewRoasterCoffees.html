@@ -18,8 +18,24 @@
     <div><p class="coffeeAtt">{{c.origin}}</p></div>
     <div><p class="coffeeAtt">{{c.roastProfile}}</p></div>
   <md-grid-tile-footer id="foot">
-    <div layout="row"><md-button ng-click="vm.editCoffee(c)" ng-show ='nav.status.username;' flex class="fh">Edit</md-button>
-      <md-button ng-show ='nav.status.username;' flex class="fh">Rating</md-button></div>
+    <div layout="row"><md-button ng-click="vm.editCoffee(c)" ng-show ='nav.status._id == c.createdBy' flex class="fh">Edit</md-button>
+
+      <!-- <md-button ng-show ='nav.status.username;' flex class="fh">Rating</md-button></div> -->
+
+
+    <!-- <label class="fh">Rating:</label>
+    <md-select ng-model="vm.coffee.rating">
+      <md-option class="inputBack" required ng-value="5"><span flex><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i></span></md-option>
+      <md-option class="inputBack" required ng-value="4"><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i></md-option>
+      <md-option class="inputBack" required ng-value="3"><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i></md-option>
+      <md-option class="inputBack" required ng-value="2"><i class="zmdi zmdi-star-outline"></i><i class="zmdi zmdi-star-outline"></i></md-option>
+      <md-option class="inputBack" required ng-value="1"><i class="zmdi zmdi-star-outline"></i></md-option>
+    </md-select> -->
+
+
+
+
+
   </md-grid-tile-footer></md-grid-tile>
 </md-grid-list>
 

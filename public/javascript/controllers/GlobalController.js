@@ -16,7 +16,7 @@
 		      $mdSidenav('right').toggle();
 		    };
 
-				vm.isOpenBottom = false;
+		vm.isOpenBottom = false;
 				//vm.availableModes = ['md-fling', 'md-scale'];
 				vm.selectedMode = 'md-fling';
 				//vm.availableDirections = ['up', 'down', 'left', 'right'];
@@ -27,10 +27,10 @@
 				vm.selectedModeBottom = 'md-fling';
 
 
-				vm.logout = function() {
+		vm.logout = function() {
       UserFactory.logout();
         $state.go('Home');
-  };
+  		};
 
     vm.register = function() {
       UserFactory.register(vm.user).then(function() {
@@ -40,6 +40,7 @@
 
     vm.login = function() {
       UserFactory.login(vm.user).then(function() {
+				// console.log(vm.status);
         vm.close();
       });
     };
@@ -63,7 +64,6 @@
 		vm.viewSplash = function(){
 			$state.go("Home");
 		};
-
 
 
 	}
